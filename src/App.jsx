@@ -1,12 +1,15 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import HorizontalCard from './components/HorizontalCard'
+// import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+
 const App = () => {
   return (
     <>
     <Navbar/>
-    <Hero/>
+    <Hero/> 
+    <HorizontalCard/>
    </>
   )
 }

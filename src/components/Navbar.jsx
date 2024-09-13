@@ -27,7 +27,7 @@ const Navbar = () => {
             <a href="/index.html" className='text-white bg-green-500 hover:bg-green-600 hover:text-white rounded-md px-3 py-2 font-semibold'>REQUEST A QUOTE</a>   
             <a href="tel:+1234567890" className="flex items-center space-x-2 text-white bg-customYellow hover:text-red-500 rounded-md px-3 py-2 font-semibold ml-15 ">
           <BsFillTelephoneOutboundFill size={20} color="currentColor" />
-          <span>(123) 456-7890</span>
+          <span>(661) 494-6275</span>
         </a>       
             
             </div>         
