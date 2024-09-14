@@ -6,8 +6,8 @@ import truckWash from '../assets/cardImages/truckWashImg.jpg'
 
 const  HorizontalCard = () => {
     return (
-<div className="flex items-center justify-center space-x-25 p-10">
-<div className='flex space-x-4 mx-[50px]'>
+<div className="flex items-center justify-center space-x-25 bg-gray-200 p-10 ">
+<div className='flex space-x-4'>
 
 <Card 
     imageSrc={repairImg} 
@@ -19,7 +19,7 @@ const  HorizontalCard = () => {
     <Card 
     imageSrc={truckWash} 
     title={'TRUCK & TRAILER WASH'} 
-    description={'Truck and Trailer wash service is available in our yard'}
+    description={'Truck and Trailer wash service is available in our yard brakes, suspension, steering, air conditioning, automatic lubrication, preventative maintenance, and more'}
     addressLink={'https://www.google.com/maps/place/Bakersfield,+CA,+USA/@35.3420035,-119.1097545,52545m/data=!3m1!1e3!4m6!3m5!1s0x80ea6bc8b994cb0d:0x59360c0998fe74c8!8m2!3d35.3732921!4d-119.0187125!16zL20vMHFfMHo?entry=ttu&g_ep=EgoyMDI0MDkxMC4wIKXMDSoASAFQAw%3D%3D'}
     />
 
