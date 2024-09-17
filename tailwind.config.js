@@ -6,17 +6,22 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily:{
+      fontFamily: {
         sans: ['Roboto', 'sans-serif']
       },
-      gridTemplateColumns:{
+      gridTemplateColumns: {
         '70/30': '70% 28%',
       },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(to bottom, #182848, #4b6cb7)',
+      },
       colors: {
-        customBlue: '#1e40af', // Your custom color code
+        customBlue: '#1e40af',
         customYellow: '#F59E0B',
       },
     },
   },
   plugins: [],
 }
+
+
