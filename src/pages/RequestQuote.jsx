@@ -1,4 +1,4 @@
-import React from 'react'
+import { BsFillTelephoneFill } from "react-icons/bs";
 import ContactCard from '../components/ContactCard'
 
 const RequestQuote = () => {
@@ -7,7 +7,11 @@ const RequestQuote = () => {
       {/* Hero Section */}
       <div className="relative h-[200px] text-[#212529] text-4xl font-bold p-8 flex flex-col items-center justify-center bg-[#e2ecf1]">
         <h2 className="mb-4 text-center">Looking for Reliable Trucking Solutions?</h2>
-        <h2 className="text-center">Complete the Form Below to Get Started!</h2>
+        <div className="flex items-center justify-center space-x-2">
+      <h2 className="text-blue-500 text-lg">Give Us A Call</h2>
+      <BsFillTelephoneFill className="text-blue-500 text-lg" />
+      <h2 className="text-blue-500 text-lg">+1 123-456-789</h2>
+    </div>
       </div>
 
       {/* Form Section */}
