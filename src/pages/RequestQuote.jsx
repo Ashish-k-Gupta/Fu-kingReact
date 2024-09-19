@@ -8,9 +8,9 @@ const RequestQuote = () => {
       <div className="relative h-[200px] text-[#212529] text-4xl font-bold p-8 flex flex-col items-center justify-center bg-[#e2ecf1]">
         <h2 className="mb-4 text-center">Looking for Reliable Trucking Solutions?</h2>
         <div className="flex items-center justify-center space-x-2">
-      <h2 className="text-blue-500 text-lg">Give Us A Call</h2>
+      <h2 className="text-blue-500 text-2xl">Give Us A Call</h2>
       <BsFillTelephoneFill className="text-blue-500 text-lg" />
-      <h2 className="text-blue-500 text-lg">+1 123-456-789</h2>
+      <h2 className="text-blue-500 text-2xl">+1 123-456-789</h2>
     </div>
       </div>
 
