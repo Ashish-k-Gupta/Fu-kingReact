@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ContactCard = () => {
-  const email = 'loads@manntransinc.com';
+  const email = 'loads@truckinginc.com';
 
   return (
     <div className='flex-1 flex items-center justify-center bg-[#e2ecf1]'>
