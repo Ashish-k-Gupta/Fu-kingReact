@@ -9,12 +9,11 @@ const RequestQuote = () => {
   const [dropLocation, setDropLocation] = useState('')
   const [trailerType, setTrailerType] = useState('')
 
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
 const submitQuoteForm = async (e) => {
   e.preventDefault();
-  setLoading(true);
-  // ... rest of your code
+  // setLoading(true);
   const potentialLoadFromMannWebsite = {
     name,
     email,
@@ -23,25 +22,27 @@ const submitQuoteForm = async (e) => {
     trailerType,
   };
 
-  try {
-    const response = await fetch('http://localhost:5000/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(potentialLoadFromMannWebsite),
-    });
+  console.log(potentialLoadFromMannWebsite)
 
-    const data = await response.json();
-    if (response.ok) {
-      alert('Email sent successfully!');
-    } else {
-      alert('Failed to send email.');
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-  setLoading(false);
+  // try {
+  //   const response = await fetch('http://localhost:5000/send-email', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(potentialLoadFromMannWebsite),
+  //   });
+
+  //   const data = await response.json();
+  //   if (response.ok) {
+  //     alert('Email sent successfully!');
+  //   } else {
+  //     alert('Failed to send email.');
+  //   }
+  // } catch (error) {
+  //   console.error('Error:', error);
+  // }
+  // setLoading(false);
 };
 
 

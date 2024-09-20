@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PiTruckTrailerFill, PiCurrencyCircleDollar, PiPhoneFill } from "react-icons/pi";
 import { FiClock } from "react-icons/fi";
 import { NavLink } from 'react-router-dom';
 
 const Hiring = () => {
+
+ const [driverName, setDriverName] = useState('')
+ const [driverEmail, setDriverEmail]  = useState('')
+ const [cellNumber, setCellNumber]  = useState('')
+ const [experience, setExperience] = useState('')
+
+
+ const submitDriverForm = async (e) =>{
+  e.preventDefault()
+  // setLoading(true);
+ const potentialDriverFromMannWebsite ={
+  driverName,
+  driverEmail,
+  cellNumber,
+  experience
+ };
+
+console.log(potentialDriverFromMannWebsite)
+ 
+ }
+
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-cutom-gradient-card">
       <div className="text-white p-8 rounded-lg shadow-2xl w-full lg:max-w-4xl bg-custom-gradient-card">
@@ -40,7 +62,7 @@ const Hiring = () => {
 
       <div className="bg-white w-full lg:max-w-4xl mt-8 p-8 rounded-lg shadow-2xl">
         <div className="flex flex-col items-center">
-          <form className="w-full max-w-lg space-y-6">
+          <form onSubmit={submitDriverForm} className="w-full max-w-lg space-y-6">
             <div className="flex space-x-4">
               <div className="flex-1">
                 <label className="block text-black text-lg font-medium mb-2" htmlFor="name">
@@ -51,6 +73,9 @@ const Hiring = () => {
                   type="text"
                   placeholder="John Doe"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                  value={driverName}
+                  onChange={(e) => setDriverName(e.target.value)}
                 />
               </div>
               <div className="flex-1">
@@ -62,6 +87,8 @@ const Hiring = () => {
                   type="email"
                   placeholder="john.doe@example.com"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={driverEmail}
+                  onChange={(e) => setDriverEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -76,6 +103,9 @@ const Hiring = () => {
                   type="text"
                   placeholder="(555) 123-4567"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                  value={cellNumber}
+                  onChange={(e) => setCellNumber(e.target.value)}
                 />
               </div>
               <div className="flex-1">
@@ -87,6 +117,8 @@ const Hiring = () => {
                   type="text"
                   placeholder="Years Of Experience"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={experience}
+                  onChange={(e) => setExperience(e.target.value)}
                 />
               </div>
             </div>
