@@ -14,6 +14,7 @@ export default {
       },
       backgroundImage: {
         'custom-gradient': 'linear-gradient(to bottom, #182848, #4b6cb7)',
+        'custom-gradient-card': 'linear-gradient(to right, #5C5C89, #12748F)',
       },
       colors: {
         customBlue: '#1e40af',

@@ -5,43 +5,41 @@ import { NavLink } from 'react-router-dom';
 
 const Hiring = () => {
   return (
-    <div className="flex flex-col lg:flex-col rounded-md p-auto">
-      <div >
-        <div className="text-white p-8 rounded-lg shadow-2xl mx-auto">
-          <h1 className="text-4xl font-bold mb-6">We're Hiring Drivers!</h1>
-          
-          <div className="space-y-4 mb-8">
-            <div className="flex items-center">
-              <PiTruckTrailerFill className="mr-4 text-3xl" />
-              <p>Join our team of professional drivers</p>
-            </div>
-            <div className="flex items-center">
-              <PiCurrencyCircleDollar className="mr-4 text-4xl" />
-              <p>Competitive pay and benefits</p>
-            </div>
-            <div className="flex items-center">
-              <FiClock className="mr-4 text-3xl" />
-              <p>Flexible schedules available</p>
-            </div>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-cutom-gradient-card">
+      <div className="text-white p-8 rounded-lg shadow-2xl w-full lg:max-w-4xl bg-custom-gradient-card">
+        <h1 className="text-4xl font-bold mb-6 text-center">We're Hiring Drivers!</h1>
+        
+        <div className="space-y-4 mb-8">
+          {/* Updated to justify-start to align left */}
+          <div className="flex items-center justify-start">
+            <PiTruckTrailerFill className="mr-4 text-3xl" />
+            <p>Join our team of professional drivers</p>
           </div>
-
-          <p className="mb-6">
-            We're looking for responsible, reliable drivers to join our growing team. 
-            If you have a clean driving record and excellent customer service skills, we want to hear from you!
-          </p>
-
-          <div className="flex items-center">
-           
-            <NavLink to="tel:+1234567890" className="flex items-center bg-white text-slate-900 px-3 py-2 rounded-md hover:text-red-500 text-xl">
-                  <PiPhoneFill size={30} color="currentColor" className='mr-3'/>
-                  <span>Call Us: (123) 456-7890</span>
-                </NavLink>
+          <div className="flex items-center justify-start">
+            <PiCurrencyCircleDollar className="mr-4 text-3xl" />
+            <p>Competitive pay and benefits</p>
           </div>
+          <div className="flex items-center justify-start">
+            <FiClock className="mr-4 text-3xl" />
+            <p>Flexible schedules available</p>
+          </div>
+        </div>
+
+        <p className="mb-6 text-center">
+          We're looking for responsible, reliable drivers to join our growing team. 
+          If you have a clean driving record and excellent customer service skills, we want to hear from you!
+        </p>
+
+        <div className="flex justify-center">
+          <NavLink to="tel:+1234567890" className="flex items-center bg-white text-slate-900 px-3 py-2 rounded-md hover:text-red-500 text-xl">
+            <PiPhoneFill size={30} color="currentColor" className="mr-3" />
+            <span>Call Us: (123) 456-7890</span>
+          </NavLink>
         </div>
       </div>
 
-      <div className="bg-white h-full">
-        <div className="flex flex-col items-center p-8">
+      <div className="bg-white w-full lg:max-w-4xl mt-8 p-8 rounded-lg shadow-2xl">
+        <div className="flex flex-col items-center">
           <form className="w-full max-w-lg space-y-6">
             <div className="flex space-x-4">
               <div className="flex-1">
@@ -82,7 +80,7 @@ const Hiring = () => {
               </div>
               <div className="flex-1">
                 <label className="block text-black text-lg font-medium mb-2" htmlFor="drop-location">
-                  Expericence (In Years)
+                  Experience (In Years)
                 </label>
                 <input
                   id="drop-location"
