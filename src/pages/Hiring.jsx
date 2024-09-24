@@ -2,37 +2,50 @@ import React, { useState } from 'react';
 import { PiTruckTrailerFill, PiCurrencyCircleDollar, PiPhoneFill } from "react-icons/pi";
 import { FiClock } from "react-icons/fi";
 import { NavLink } from 'react-router-dom';
+import axios from 'axios'; // Import Axios
 
 const Hiring = () => {
+  const [driverName, setDriverName] = useState('');
+  const [driverEmail, setDriverEmail] = useState('');
+  const [cellNumber, setCellNumber] = useState('');
+  const [experience, setExperience] = useState('');
+  const [loading, setLoading] = useState(false); // Optional: for loading state
+  const [error, setError] = useState(null); // Optional: for error handling
 
- const [driverName, setDriverName] = useState('')
- const [driverEmail, setDriverEmail]  = useState('')
- const [cellNumber, setCellNumber]  = useState('')
- const [experience, setExperience] = useState('')
+  const submitDriverForm = async (e) => {
+    e.preventDefault();
+    setLoading(true); // Start loading state
+    setError(null); // Reset error message
 
+    const potentialDriverFromMannWebsite = {
+      driverName,
+      driverEmail,
+      cellNumber,
+      experience,
+    };
 
- const submitDriverForm = async (e) =>{
-  e.preventDefault()
-  // setLoading(true);
- const potentialDriverFromMannWebsite ={
-  driverName,
-  driverEmail,
-  cellNumber,
-  experience
- };
-
-console.log(potentialDriverFromMannWebsite)
- 
- }
-
+    try {
+      const response = await axios.post('http://localhost:5000/api/driver', potentialDriverFromMannWebsite);
+      console.log(response.data); // Log the response from the backend
+      // Clear form fields after successful submission
+      setDriverName('');
+      setDriverEmail('');
+      setCellNumber('');
+      setExperience('');
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setError('There was an error submitting the form. Please try again.'); // Set error message
+    } finally {
+      setLoading(false); // End loading state
+    }
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-cutom-gradient-card">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-custom-gradient-card">
       <div className="text-white p-8 rounded-lg shadow-2xl w-full lg:max-w-4xl bg-custom-gradient-card">
         <h1 className="text-4xl font-bold mb-6 text-center">We're Hiring Drivers!</h1>
-        
+
         <div className="space-y-4 mb-8">
-          {/* Updated to justify-start to align left */}
           <div className="flex items-center justify-start">
             <PiTruckTrailerFill className="mr-4 text-3xl" />
             <p>Join our team of professional drivers</p>
@@ -95,11 +108,11 @@ console.log(potentialDriverFromMannWebsite)
 
             <div className="flex space-x-4">
               <div className="flex-1">
-                <label className="block text-black text-lg font-medium mb-2" htmlFor="pickup-location">
+                <label className="block text-black text-lg font-medium mb-2" htmlFor="cell-number">
                   Cell Number
                 </label>
                 <input
-                  id="pickup-location"
+                  id="cell-number"
                   type="text"
                   placeholder="(555) 123-4567"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -109,11 +122,11 @@ console.log(potentialDriverFromMannWebsite)
                 />
               </div>
               <div className="flex-1">
-                <label className="block text-black text-lg font-medium mb-2" htmlFor="drop-location">
+                <label className="block text-black text-lg font-medium mb-2" htmlFor="experience">
                   Experience (In Years)
                 </label>
                 <input
-                  id="drop-location"
+                  id="experience"
                   type="text"
                   placeholder="Years Of Experience"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -123,12 +136,14 @@ console.log(potentialDriverFromMannWebsite)
               </div>
             </div>
 
+            {error && <p className="text-red-500">{error}</p>} {/* Display error message */}
             <div className="flex justify-center">
               <button
                 type="submit"
                 className="bg-blue-500 text-white px-6 py-2 rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                disabled={loading} // Disable button while loading
               >
-                Send Message
+                {loading ? 'Sending...' : 'Send Message'}
               </button>
             </div>
           </form>
